@@ -39,9 +39,12 @@ export default function ProjectsPage() {
               <Card className="h-full bg-white/[0.02] border-white/5 overflow-hidden rounded-3xl hover:border-primary/30 transition-all p-6 flex flex-col justify-between">
                 <div className="space-y-6">
                   <div className="aspect-video rounded-xl bg-muted overflow-hidden relative border border-white/5">
-                     <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent flex items-center justify-center">
-                        <span className="text-muted-foreground/10 font-bold text-lg">{project.title}</span>
-                     </div>
+                     <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
                   </div>
                   <div className="space-y-3">
                     <div className="flex flex-wrap gap-2">
