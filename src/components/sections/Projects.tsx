@@ -57,11 +57,18 @@ export const Projects = () => {
               </div>
             </div>
 
-            <div className="lg:w-1/2 mt-12 lg:mt-0 relative aspect-video rounded-2xl overflow-hidden border border-white/10 bg-muted group-hover:border-primary/50 transition-colors">
-               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent flex items-center justify-center">
-                  <span className="text-muted-foreground/20 font-bold text-4xl italic">Video Showcase</span>
-               </div>
-               {/* Video would go here */}
+            <div className="lg:w-1/2 mt-12 lg:mt-0 relative aspect-video rounded-2xl overflow-hidden border border-white/10 bg-muted group-hover:border-primary/50 transition-colors shadow-2xl">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src={flagship.video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
             </div>
           </Card>
         </div>
