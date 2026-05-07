@@ -209,8 +209,8 @@ export const Hero = () => {
           style={{ transform: !isMobile ? "translateZ(80px)" : "none" }}
           className="text-5xl md:text-8xl font-bold tracking-tighter mb-6 leading-[1.1] relative"
         >
-          Engineering <span className="text-gradient">Products</span> That <br />{" "}
-          <span className="italic font-light">Scale</span> The Future
+          Helping Brands <span className="text-gradient">Scale</span> & <br />{" "}
+          <span className="italic font-light">Succeed</span> In The Digital Age
           
           <motion.div 
             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-200%]"
@@ -226,8 +226,8 @@ export const Hero = () => {
           style={{ transform: !isMobile ? "translateZ(40px)" : "none" }}
           className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto backdrop-blur-[2px]"
         >
-          Full-Stack Developer, SaaS Founder, and Product Engineer. Specializing in high-performance
-          applications and AI-driven ecosystems.
+          I help business owners and forward-thinking brands transform complex ideas into 
+          high-performance, AI-driven products that drive real growth and efficiency.
         </motion.p>
 
         <motion.div
@@ -240,7 +240,7 @@ export const Hero = () => {
           <Link href="/projects">
             <Button size="lg" className="rounded-full px-8 h-12 text-md shadow-glow group relative overflow-hidden">
               <span className="cursor-pointer relative z-10 flex items-center">
-                View Projects
+                See How I Help
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
               <motion.div 
@@ -257,7 +257,7 @@ export const Hero = () => {
               size="lg"
               className="cursor-pointer rounded-full px-8 h-12 text-md border-white/10 hover:bg-white/10 transition-colors glass"
             >
-              Let&apos;s Build
+              Start Scaling
             </Button>
           </Link>
         </motion.div>

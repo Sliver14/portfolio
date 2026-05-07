@@ -28,8 +28,8 @@ export const Contact = () => {
         <div>
           <Badge variant="outline" className="mb-4">CONTACT</Badge>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            Let&apos;s build <br />
-            <span className="text-gradient">something legendary.</span>
+            Ready to scale <br />
+            <span className="text-gradient">your brand?</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-12 max-w-md">
             Whether you have a fully-fledged SaaS idea or just a spark of inspiration, let&apos;s talk about how we can scale it.

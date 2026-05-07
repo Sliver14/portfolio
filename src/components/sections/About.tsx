@@ -19,21 +19,22 @@ export const About = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
           <Badge variant="outline" className="mb-4 border-primary/20 text-primary">
-            THE STORY
+            HOW I HELP
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            Building digital ecosystems <br />
-            <span className="text-muted-foreground">with precision and intent.</span>
+            Empowering business owners <br />
+            <span className="text-muted-foreground">with strategic technical execution.</span>
           </h2>
           <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
             <p>
-              My journey started with a simple question: How can we make software feel more human?
-              Today, I build scalable SaaS products that solve real-world problems.
+              I focus on the intersection of business goals and technical excellence. My goal isn&apos;t 
+              just to write code, but to help you build a sustainable, scalable engine for your 
+              brand&apos;s success.
             </p>
             <p>
-              As a founder and engineer, I bridge the gap between complex backend architectures and
-              cinematic frontend experiences. I don&apos;t just write code; I build products that people
-              love to use.
+              As your technical partner, I bridge the gap between complex engineering and 
+              measurable business results. I don&apos;t just build apps; I create solutions 
+              that business owners rely on to grow, automate, and dominate their niche.
             </p>
           </div>
 

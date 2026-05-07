@@ -109,21 +109,21 @@ export const EXPERIENCE = [
     role: "SaaS Founder",
     company: "GymPilotPro",
     period: "2023 - Present",
-    description: "Built and scaled an AI gym management platform from zero to 50+ enterprise clients.",
+    description: "Helping 50+ business owners automate operations and scale their brands through an AI-driven ecosystem.",
     achievements: [
-      "Integrated OpenAI for personalized fitness plans",
-      "Optimized database performance by 40%",
-      "Scaled to 10k+ monthly active users",
+      "Empowered gym owners with AI-personalized fitness plans",
+      "Optimized operational efficiency for enterprise clients",
+      "Scaled business infrastructure to 10k+ monthly active users",
     ],
   },
   {
     role: "Full-Stack Product Engineer",
     company: "Freelance / Indie Hacker",
     period: "2021 - 2023",
-    description: "Launched multiple successful micro-SaaS products and helped startups build MVP versions.",
+    description: "Partnering with business owners and brands to ship rapid, high-performance MVPs focused on ROI and strategic growth.",
     achievements: [
-      "Shipped 5+ production-ready apps",
-      "Handled full product lifecycle from UI/UX to DevOps",
+      "Shipped 5+ high-ROI products for diverse brands",
+      "Consulted founders on product strategy and technical execution",
     ],
   },
 ];
