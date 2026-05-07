@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { PROJECTS } from "@/constants";
 import { Play } from "lucide-react";
+import Image from "next/image";
 
 interface FullScreenVideoElement extends HTMLVideoElement {
   webkitRequestFullscreen?: () => Promise<void>;
@@ -67,14 +68,22 @@ export const VideoShowcase = () => {
 
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-black">
-      {/* Background Poster Container */}
+      {/* Background Static Image Container */}
       <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80"
+          alt="Cinematic Background"
+          fill
+          className="object-cover opacity-40 scale-105 transition-transform duration-1000"
+        />
+        
+        {/* Hidden Video element for Fullscreen API */}
         <video
           ref={videoRef}
-          muted
-          loop
-          playsInline
-          className={`w-full h-full object-cover opacity-40 scale-105 transition-all duration-1000 ${isPlaying ? 'blur-sm' : ''}`}
+          className="hidden"
+          controlsList="nodownload"
+          onContextMenu={(e) => e.preventDefault()}
+          disablePictureInPicture
         >
           <source src={flagship?.video} type="video/mp4" />
         </video>

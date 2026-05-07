@@ -72,6 +72,9 @@ export const Projects = () => {
                 loop
                 playsInline
                 className="w-full h-full object-cover"
+                controlsList="nodownload"
+                onContextMenu={(e) => e.preventDefault()}
+                disablePictureInPicture
               >
                 <source src={flagship.video} type="video/mp4" />
                 Your browser does not support the video tag.
