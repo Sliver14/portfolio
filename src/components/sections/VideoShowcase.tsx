@@ -28,6 +28,10 @@ export const VideoShowcase = () => {
       try {
         const video = videoRef.current;
         
+        // Ensure video is "displayable" before requesting fullscreen
+        video.style.display = "block";
+        video.style.opacity = "1";
+
         if (video.requestFullscreen) {
           await video.requestFullscreen();
         } else if (video.webkitRequestFullscreen) {
@@ -42,6 +46,10 @@ export const VideoShowcase = () => {
         setIsPlaying(true);
       } catch (err) {
         console.error("Error attempting to enable full-screen mode:", err);
+        // Reset styles if it fails
+        if (videoRef.current) {
+          videoRef.current.style.display = "none";
+        }
       }
     }
   };
@@ -49,10 +57,13 @@ export const VideoShowcase = () => {
   useEffect(() => {
     const handleFullscreenChange = () => {
       const doc = document as FullScreenDocument;
-      if (!doc.fullscreenElement && !doc.webkitFullscreenElement && !doc.webkitIsFullScreen) {
+      const isCurrentlyFullscreen = !!(doc.fullscreenElement || doc.webkitFullscreenElement || doc.webkitIsFullScreen);
+      
+      if (!isCurrentlyFullscreen) {
         setIsPlaying(false);
         if (videoRef.current) {
           videoRef.current.pause();
+          videoRef.current.style.display = "none"; // Re-hide when exiting
         }
       }
     };
@@ -80,7 +91,8 @@ export const VideoShowcase = () => {
         {/* Hidden Video element for Fullscreen API */}
         <video
           ref={videoRef}
-          className="hidden"
+          style={{ display: "none" }} // Initially hidden
+          className="absolute inset-0 w-full h-full object-cover"
           controlsList="nodownload"
           onContextMenu={(e) => e.preventDefault()}
           disablePictureInPicture
