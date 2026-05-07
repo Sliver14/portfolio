@@ -12,7 +12,7 @@ export const PROJECTS = [
     title: "GymPilotPro",
     description: "AI-powered gym management SaaS platform revolutionizing how fitness centers operate.",
     longDescription: "A comprehensive AI-driven ecosystem for gym owners. Featuring automated membership management, real-time analytics, AI-powered workout recommendations, and seamless trainer-client communication.",
-    image: "gympilotPro.jpeg",
+    image: "/gympilotPro.jpeg",
     video: "/GymPilotPro Clip1 Voiceover 2.mp4",
     tags: ["SaaS", "AI", "Full Stack", "Next.js", "PostgreSQL"],
     links: {
