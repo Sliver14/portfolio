@@ -47,7 +47,7 @@ export const Navbar = () => {
             </li>
           ))}
           <li>
-            <Button size="sm" className="rounded-full px-6 shadow-glow">
+            <Button size="sm" className="cursor-pointer rounded-full px-6 shadow-glow">
               Let&apos;s Build
             </Button>
           </li>

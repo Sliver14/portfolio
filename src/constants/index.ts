@@ -12,7 +12,7 @@ export const PROJECTS = [
     title: "GymPilotPro",
     description: "AI-powered gym management SaaS platform revolutionizing how fitness centers operate.",
     longDescription: "A comprehensive AI-driven ecosystem for gym owners. Featuring automated membership management, real-time analytics, AI-powered workout recommendations, and seamless trainer-client communication.",
-    image: "/projects/gympilot.jpg", // Placeholder
+    image: "gympilotPro.jpeg",
     video: "/GymPilotPro Clip1 Voiceover 2.mp4",
     tags: ["SaaS", "AI", "Full Stack", "Next.js", "PostgreSQL"],
     links: {
@@ -32,7 +32,7 @@ export const PROJECTS = [
     id: "gonative",
     title: "GoNative Marketplace",
     description: "Modern marketplace platform with scalable ecommerce architecture.",
-    image: "/projects/gonative.jpg",
+    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80",
     tags: ["Marketplace", "Node.js", "React Native", "Stripe"],
     links: {
       live: "https://gonative.market",
@@ -49,7 +49,7 @@ export const PROJECTS = [
     id: "reno-app",
     title: "Reno App",
     description: "Modern renovation and property management application for homeowners.",
-    image: "/projects/reno.jpg",
+    image: "https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80",
     tags: ["Productivity", "Next.js", "Firebase", "Design"],
     links: {
       live: "https://renoapp.io",
@@ -66,11 +66,11 @@ export const PROJECTS = [
     id: "cecilia-abua",
     title: "Cecilia Abua Portfolio",
     description: "Personal portfolio and brand showcase for Cecilia Abua.",
-    image: "/projects/cecilia.jpg",
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80",
     tags: ["Portfolio", "Web Design", "Next.js", "TailwindCSS"],
     links: {
       live: "https://www.ceciliaabua.com",
-      github: "https://github.com/Sliver14/cecilia-abua", // Placeholder based on previous context
+      github: "https://github.com/Sliver14/cecilia-abua",
     },
     features: [
       "Responsive design",
@@ -83,11 +83,11 @@ export const PROJECTS = [
     id: "esther-odejobi",
     title: "Esther Odejobi Portfolio",
     description: "Personal brand and portfolio website for Esther Odejobi.",
-    image: "/projects/esther.jpg",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80",
     tags: ["Portfolio", "Frontend", "React", "Animations"],
     links: {
       live: "https://www.estherodejobi.com",
-      github: "https://github.com/Sliver14/esther-odejobi", // Placeholder
+      github: "https://github.com/Sliver14/esther-odejobi",
     },
     features: [
       "Dynamic content",
@@ -161,10 +161,10 @@ export const TESTIMONIALS = [
 ];
 
 export const CONTACT_INFO = {
-  email: "hello@yourportfolio.com",
+  email: "silverchristopher12@gmail.com",
   socials: [
-    { label: "Twitter", href: "https://twitter.com/yourusername" },
-    { label: "GitHub", href: "https://github.com/yourusername" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
+    { label: "Twitter", href: "https://github.com/Sliver14" },
+    { label: "GitHub", href: "https://github.com/Sliver14" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/sylver-oyinaga-7409481a9" },
   ],
 };

@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Sylver | SaaS Founder & Product Engineer",
   description: "Portfolio of a world-class SaaS founder and full-stack product engineer specializing in AI-driven ecosystems.",
   keywords: ["Next.js", "React", "SaaS", "Founder", "Product Engineer", "AI", "Portfolio"],
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
