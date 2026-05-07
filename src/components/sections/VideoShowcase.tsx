@@ -92,10 +92,11 @@ export const VideoShowcase = () => {
         <video
           ref={videoRef}
           style={{ display: "none" }} // Initially hidden
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-contain md:object-cover bg-black"
           controlsList="nodownload"
           onContextMenu={(e) => e.preventDefault()}
           disablePictureInPicture
+          playsInline
         >
           <source src={flagship?.video} type="video/mp4" />
         </video>

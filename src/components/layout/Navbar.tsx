@@ -47,9 +47,11 @@ export const Navbar = () => {
             </li>
           ))}
           <li>
-            <Button size="sm" className="cursor-pointer rounded-full px-6 shadow-glow">
-              Let&apos;s Build
-            </Button>
+            <Link href="#contact">
+              <Button size="sm" className="cursor-pointer rounded-full px-6 shadow-glow">
+                Let&apos;s Build
+              </Button>
+            </Link>
           </li>
         </ul>
 
@@ -84,7 +86,9 @@ export const Navbar = () => {
                 </li>
               ))}
               <li>
-                <Button className="w-full rounded-full shadow-glow">Let&apos;s Build</Button>
+                <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>
+                  <Button className="w-full rounded-full shadow-glow">Let&apos;s Build</Button>
+                </Link>
               </li>
             </ul>
           </motion.div>
