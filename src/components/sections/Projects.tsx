@@ -57,7 +57,7 @@ export const Projects = () => {
 
               <Button
                 variant="outline"
-                onClick={() => window.open('https://github.com/Sliver14/gympilotpropro/gympilotpro', '_blank')}
+                onClick={() => window.open('https://github.com/Sliver14/gympilotpro', '_blank')}
                 className="hover:cursor-pointer rounded-full px-8 border-white/10"
               >
                 <Code2 className="mr-2 w-4 h-4" /> Source

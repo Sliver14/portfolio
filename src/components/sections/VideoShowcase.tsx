@@ -6,26 +6,35 @@ import { Badge } from "@/components/ui/badge";
 import { PROJECTS } from "@/constants";
 import { Play } from "lucide-react";
 
+interface FullScreenVideoElement extends HTMLVideoElement {
+  webkitRequestFullscreen?: () => Promise<void>;
+  webkitEnterFullscreen?: () => Promise<void>;
+  msRequestFullscreen?: () => Promise<void>;
+}
+
+interface FullScreenDocument extends Document {
+  webkitFullscreenElement?: Element;
+  webkitIsFullScreen?: boolean;
+}
+
 export const VideoShowcase = () => {
   const flagship = PROJECTS.find((p) => p.id === "gym-pilot-pro");
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<FullScreenVideoElement>(null);
 
   const handlePlay = async () => {
     if (videoRef.current) {
       try {
         const video = videoRef.current;
         
-        // Attempt to enter native full screen with proper type casting for vendor prefixes
         if (video.requestFullscreen) {
           await video.requestFullscreen();
-        } else if ((video as any).webkitRequestFullscreen) {
-          await (video as any).webkitRequestFullscreen();
-        } else if ((video as any).webkitEnterFullscreen) {
-          // iOS Safari specific
-          await (video as any).webkitEnterFullscreen();
-        } else if ((video as any).msRequestFullscreen) {
-          await (video as any).msRequestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          await video.webkitRequestFullscreen();
+        } else if (video.webkitEnterFullscreen) {
+          await video.webkitEnterFullscreen();
+        } else if (video.msRequestFullscreen) {
+          await video.msRequestFullscreen();
         }
         
         video.play();
@@ -38,7 +47,8 @@ export const VideoShowcase = () => {
 
   useEffect(() => {
     const handleFullscreenChange = () => {
-      if (!document.fullscreenElement && !(document as any).webkitFullscreenElement && !(document as any).webkitIsFullScreen) {
+      const doc = document as FullScreenDocument;
+      if (!doc.fullscreenElement && !doc.webkitFullscreenElement && !doc.webkitIsFullScreen) {
         setIsPlaying(false);
         if (videoRef.current) {
           videoRef.current.pause();
