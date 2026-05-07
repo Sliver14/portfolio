@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Zap, Code2, Rocket, BrainCircuit } from "lucide-react";
+import Image from "next/image";
 
 export const About = () => {
   const highlights = [
@@ -53,30 +54,23 @@ export const About = () => {
         </div>
 
         <div className="relative">
-          <div className="aspect-square rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-primary/10 to-transparent flex items-center justify-center p-8">
-            {/* Abstract Visual or Image Placeholder */}
-            <div className="absolute inset-0 bg-grid opacity-10" />
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="w-64 h-64 border-2 border-dashed border-primary/20 rounded-full flex items-center justify-center"
-            >
-              <div className="w-48 h-48 border-2 border-dashed border-primary/40 rounded-full flex items-center justify-center">
-                <div className="w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
-              </div>
-            </motion.div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-8xl font-black text-white/5 tracking-tighter uppercase select-none">
-                SaaS
-              </span>
-            </div>
+          <div className="aspect-square rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-primary/10 to-transparent flex items-center justify-center relative">
+            <Image
+              src="/sylver_portrait.png"
+              alt="Sylver Portrait"
+              fill
+              className="object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-80 hover:opacity-100"
+            />
+            {/* Overlay for premium look */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-primary/5 mix-blend-overlay pointer-events-none" />
           </div>
           
           {/* Floating Metric Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            className="absolute -bottom-6 -left-6 glass p-6 rounded-2xl shadow-xl max-w-[200px]"
+            className="absolute -bottom-6 -left-6 glass p-6 rounded-2xl shadow-xl max-w-[200px] z-20"
           >
             <p className="text-3xl font-bold text-gradient">50+</p>
             <p className="text-xs text-muted-foreground uppercase tracking-wider">
