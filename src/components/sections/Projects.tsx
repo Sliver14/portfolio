@@ -47,14 +47,22 @@ export const Projects = () => {
                 ))}
               </ul>
 
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Button className="rounded-full px-8 shadow-glow">
-                  Live Preview <ArrowUpRight className="ml-2 w-4 h-4" />
-                </Button>
-                <Button variant="outline" className="rounded-full px-8 border-white/10">
-                  <Code2 className="mr-2 w-4 h-4" /> Source
-                </Button>
-              </div>
+            <div className="flex flex-wrap gap-4 pt-4">
+              <Button
+                onClick={() => window.open('https://www.gympilotpro.com/', '_blank')}
+                className="hover:cursor-pointer rounded-full px-8 shadow-glow"
+              >
+                Live Preview <ArrowUpRight className="ml-2 w-4 h-4" />
+              </Button>
+
+              <Button
+                variant="outline"
+                onClick={() => window.open('https://github.com/Sliver14/gympilotpropro/gympilotpro', '_blank')}
+                className="hover:cursor-pointer rounded-full px-8 border-white/10"
+              >
+                <Code2 className="mr-2 w-4 h-4" /> Source
+              </Button>
+            </div>
             </div>
 
             <div className="lg:w-1/2 mt-12 lg:mt-0 relative aspect-video rounded-2xl overflow-hidden border border-white/10 bg-muted group-hover:border-primary/50 transition-colors shadow-2xl">
