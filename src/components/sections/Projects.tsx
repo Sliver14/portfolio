@@ -70,20 +70,21 @@ export const Projects = () => {
               </div>
             </div>
 
-            {/* Media Side - Right (Bleed to edges) */}
-            <div className="w-full lg:w-[50%] relative min-h-[400px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-white/10 group-hover:border-primary/30 transition-colors bg-muted flex-shrink-0 self-stretch">
-              <img
-                src={flagship.image}
-                alt={flagship.title}
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110"
-              />
-              {/* Immersive Integration Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/5 to-transparent lg:block hidden" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/5 to-transparent lg:hidden block" />
-              
-              {/* Interactive Glass Tag */}
-              <div className="absolute bottom-6 right-6 backdrop-blur-md bg-white/5 border border-white/10 px-4 py-2 rounded-full opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-20">
-                <p className="text-[10px] text-white font-medium tracking-[0.2em] uppercase">Architecture: {flagship.tags[0]} + {flagship.tags[1]}</p>
+            {/* Media Side - Right (Contained & Rounded) */}
+            <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-full p-4 md:p-8 lg:p-10 lg:pl-0 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500">
+              <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden border border-white/10 bg-muted shadow-2xl group-hover:border-primary/40 transition-colors">
+                <img
+                  src={flagship.image}
+                  alt={flagship.title}
+                  className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105"
+                />
+                {/* Immersive Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-background/20 to-transparent pointer-events-none" />
+                
+                {/* Interactive Glass Tag - Now inside the rounded frame */}
+                <div className="absolute bottom-4 right-4 backdrop-blur-md bg-white/5 border border-white/10 px-3 py-1.5 rounded-full opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-20">
+                  <p className="text-[9px] text-white font-medium tracking-[0.2em] uppercase">{flagship.tags[0]} + {flagship.tags[1]}</p>
+                </div>
               </div>
             </div>
           </Card>
