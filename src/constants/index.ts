@@ -29,23 +29,6 @@ export const PROJECTS = [
     featured: true,
   },
   {
-    id: "gonative",
-    title: "GoNative Marketplace",
-    description: "Modern marketplace platform with scalable ecommerce architecture.",
-    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80",
-    tags: ["Marketplace", "Node.js", "React Native", "Stripe"],
-    links: {
-      live: "https://gonative.market",
-      github: "https://github.com/yourusername/gonative",
-    },
-    features: [
-      "Multi-vendor support",
-      "Real-time inventory tracking",
-      "Native mobile app support",
-      "Secure checkout flow",
-    ],
-  },
-  {
     id: "reno-app",
     title: "Reno App",
     description: "Modern renovation and property management application for homeowners.",
