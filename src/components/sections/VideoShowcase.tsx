@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { PROJECTS } from "@/constants";
 import { Play } from "lucide-react";
@@ -14,18 +14,21 @@ export const VideoShowcase = () => {
   const handlePlay = async () => {
     if (videoRef.current) {
       try {
-        // Attempt to enter native full screen
-        if (videoRef.current.requestFullscreen) {
-          await videoRef.current.requestFullscreen();
-        } else if ((videoRef.current as any).webkitRequestFullscreen) {
-          /* Safari */
-          await (videoRef.current as any).webkitRequestFullscreen();
-        } else if ((videoRef.current as any).msRequestFullscreen) {
-          /* IE11 */
-          await (videoRef.current as any).msRequestFullscreen();
+        const video = videoRef.current;
+        
+        // Attempt to enter native full screen with proper type casting for vendor prefixes
+        if (video.requestFullscreen) {
+          await video.requestFullscreen();
+        } else if ((video as any).webkitRequestFullscreen) {
+          await (video as any).webkitRequestFullscreen();
+        } else if ((video as any).webkitEnterFullscreen) {
+          // iOS Safari specific
+          await (video as any).webkitEnterFullscreen();
+        } else if ((video as any).msRequestFullscreen) {
+          await (video as any).msRequestFullscreen();
         }
         
-        videoRef.current.play();
+        video.play();
         setIsPlaying(true);
       } catch (err) {
         console.error("Error attempting to enable full-screen mode:", err);
@@ -35,7 +38,7 @@ export const VideoShowcase = () => {
 
   useEffect(() => {
     const handleFullscreenChange = () => {
-      if (!document.fullscreenElement) {
+      if (!document.fullscreenElement && !(document as any).webkitFullscreenElement && !(document as any).webkitIsFullScreen) {
         setIsPlaying(false);
         if (videoRef.current) {
           videoRef.current.pause();
@@ -61,8 +64,7 @@ export const VideoShowcase = () => {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover opacity-40 scale-105 transition-transform duration-1000"
-          poster="/projects/gympilot-poster.jpg" // Added poster support
+          className={`w-full h-full object-cover opacity-40 scale-105 transition-all duration-1000 ${isPlaying ? 'blur-sm' : ''}`}
         >
           <source src={flagship?.video} type="video/mp4" />
         </video>
