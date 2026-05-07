@@ -62,6 +62,40 @@ export const PROJECTS = [
       "Document management",
     ],
   },
+  {
+    id: "cecilia-abua",
+    title: "Cecilia Abua Portfolio",
+    description: "Personal portfolio and brand showcase for Cecilia Abua.",
+    image: "/projects/cecilia.jpg",
+    tags: ["Portfolio", "Web Design", "Next.js", "TailwindCSS"],
+    links: {
+      live: "https://www.ceciliaabua.com",
+      github: "https://github.com/Sliver14/cecilia-abua", // Placeholder based on previous context
+    },
+    features: [
+      "Responsive design",
+      "Modern aesthetic",
+      "Brand storytelling",
+      "Interactive elements",
+    ],
+  },
+  {
+    id: "esther-odejobi",
+    title: "Esther Odejobi Portfolio",
+    description: "Personal brand and portfolio website for Esther Odejobi.",
+    image: "/projects/esther.jpg",
+    tags: ["Portfolio", "Frontend", "React", "Animations"],
+    links: {
+      live: "https://www.estherodejobi.com",
+      github: "https://github.com/Sliver14/esther-odejobi", // Placeholder
+    },
+    features: [
+      "Dynamic content",
+      "Smooth animations",
+      "Mobile optimized",
+      "Contact integration",
+    ],
+  },
 ];
 
 export const SKILLS = [

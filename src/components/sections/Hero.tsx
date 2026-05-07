@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const Hero = () => {
   return (
@@ -52,17 +53,21 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button size="lg" className="rounded-full px-8 h-12 text-md shadow-glow group">
-            View Projects
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="rounded-full px-8 h-12 text-md border-white/10 hover:bg-white/5"
-          >
-            Contact Me
-          </Button>
+          <Link href="/projects">
+            <Button size="lg" className="rounded-full px-8 h-12 text-md shadow-glow group">
+              View Projects
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
+          <Link href="#contact">
+            <Button
+              variant="outline"
+              size="lg"
+              className="rounded-full px-8 h-12 text-md border-white/10 hover:bg-white/5"
+            >
+              Contact Me
+            </Button>
+          </Link>
         </motion.div>
       </div>
 

@@ -7,6 +7,7 @@ import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import Link from "next/link";
 
 export const Projects = () => {
   const flagship = PROJECTS.find((p) => p.id === "gym-pilot-pro");
@@ -128,6 +129,15 @@ export const Projects = () => {
             </Card>
           </motion.div>
         ))}
+      </div>
+
+      <div className="flex justify-center pt-16">
+        <Link href="/projects">
+          <Button variant="outline" className="rounded-full px-12 h-14 text-lg border-white/10 hover:bg-white/5 group">
+            View Full Catalog
+            <ArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </Button>
+        </Link>
       </div>
     </Section>
   );
