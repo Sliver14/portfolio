@@ -210,7 +210,7 @@ export const Hero = () => {
           className="text-5xl md:text-8xl font-bold tracking-tighter mb-6 leading-[1.1] relative"
         >
           Helping Brands <span className="text-gradient">Scale</span> & <br />{" "}
-          <span className="italic font-light">Succeed</span> In The Digital Age
+          <span className="italic font-light">Succeed</span> In This Digital Age
           
           <motion.div 
             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-200%]"
