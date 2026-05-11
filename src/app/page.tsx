@@ -10,7 +10,7 @@ import { VideoShowcase } from "@/components/sections/VideoShowcase";
 export default function Home() {
   return (
     <div className="space-y-0">
-      <Hero />
+      {/* <Hero /> */}
       <About />
       <Projects />
       <VideoShowcase />

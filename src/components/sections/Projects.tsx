@@ -124,7 +124,7 @@ export const Projects = () => {
 
               <div className="flex items-center gap-4 mt-6">
                 <Button variant="link" size="sm" className="p-0 text-primary hover:text-primary/80 h-auto text-xs">
-                  Case Study <ArrowUpRight className="ml-1 w-3 h-3" />
+                  Live <ArrowUpRight className="ml-1 w-3 h-3" />
                 </Button>
                 <div className="flex-1" />
                 <Button variant="ghost" size="icon" className="w-8 h-8 rounded-full hover:bg-white/5">
