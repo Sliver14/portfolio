@@ -17,7 +17,7 @@ export const About = () => {
   return (
     <Section id="about" className="relative">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
+        <div className="order-2 lg:order-1">
           <Badge variant="outline" className="mb-4 border-primary/20 text-primary">
             HOW I HELP
           </Badge>
@@ -30,11 +30,6 @@ export const About = () => {
               I focus on the intersection of business goals and technical excellence. My goal isn&apos;t 
               just to write code, but to help you build a sustainable, scalable engine for your 
               brand&apos;s success.
-            </p>
-            <p>
-              As your technical partner, I bridge the gap between complex engineering and 
-              measurable business results. I don&apos;t just build apps; I create solutions 
-              that business owners rely on to grow, automate, and dominate their niche.
             </p>
           </div>
 
@@ -54,7 +49,7 @@ export const About = () => {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative order-1 lg:order-2">
           <div className="aspect-square rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-primary/10 to-transparent flex items-center justify-center relative">
             <Image
               src="/sylver_portrait.png"
