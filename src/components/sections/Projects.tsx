@@ -54,7 +54,7 @@ export const Projects = () => {
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <Button
-                  onClick={() => window.open('https://www.gympilotpro.com/', '_blank')}
+                  onClick={() => flagship.links.live && window.open(flagship.links.live, '_blank')}
                   className="hover:cursor-pointer rounded-full px-8 shadow-glow h-12"
                 >
                   Live Preview <ArrowUpRight className="ml-2 w-4 h-4" />
@@ -62,7 +62,7 @@ export const Projects = () => {
 
                 <Button
                   variant="outline"
-                  onClick={() => window.open('https://github.com/Sliver14/gympilotpro', '_blank')}
+                  onClick={() => flagship.links.github && window.open(flagship.links.github, '_blank')}
                   className="hover:cursor-pointer rounded-full px-8 border-white/10 h-12"
                 >
                   <Code2 className="mr-2 w-4 h-4" /> Source
@@ -123,14 +123,29 @@ export const Projects = () => {
               </div>
 
               <div className="flex items-center gap-4 mt-6">
-                <Button variant="link" size="sm" className="p-0 text-primary hover:text-primary/80 h-auto text-xs">
+                <Button 
+                  variant="link" 
+                  size="sm" 
+                  className="p-0 text-primary hover:text-primary/80 h-auto text-xs"
+                  onClick={() => project.links.live && window.open(project.links.live, '_blank')}
+                >
                   Live <ArrowUpRight className="ml-1 w-3 h-3" />
                 </Button>
                 <div className="flex-1" />
-                <Button variant="ghost" size="icon" className="w-8 h-8 rounded-full hover:bg-white/5">
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="w-8 h-8 rounded-full hover:bg-white/5"
+                  onClick={() => project.links.github && window.open(project.links.github, '_blank')}
+                >
                   <Code2 className="w-3.5 h-3.5" />
                 </Button>
-                <Button variant="ghost" size="icon" className="w-8 h-8 rounded-full hover:bg-white/5">
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="w-8 h-8 rounded-full hover:bg-white/5"
+                  onClick={() => project.links.live && window.open(project.links.live, '_blank')}
+                >
                   <ExternalLink className="w-3.5 h-3.5" />
                 </Button>
               </div>

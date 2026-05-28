@@ -17,7 +17,7 @@ export const PROJECTS = [
     tags: ["SaaS", "AI", "Full Stack", "Next.js", "PostgreSQL"],
     links: {
       live: "https://gympilotpro.com",
-      github: "https://github.com/yourusername/gympilotpro",
+      github: "https://github.com/Sliver14/gympilotpro",
     },
     features: [
       "AI Assistant for workout plans",
@@ -29,20 +29,20 @@ export const PROJECTS = [
     featured: true,
   },
   {
-    id: "gonative-market-app",
-    title: "GoNative Market App",
-    description: "Modern marketplace application connecting users with authentic local products and vendors.",
+    id: "medical-missions",
+    title: "Network for Medical Missions",
+    description: "A platform dedicated to coordinating and supporting medical missions globally.",
     image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&q=80",
-    tags: ["Marketplace", "Next.js", "Firebase", "E-commerce"],
+    tags: ["Medical", "Next.js", "Firebase", "Global Outreach"],
     links: {
-      live: "https://gonativemarket.com",
-      github: "https://github.com/yourusername/gonative-market-app",
+      live: "https://networkformedicalmissions.org",
+      github: "https://github.com/Sliver14/networkformedicalmissions",
     },
     features: [
-      "Vendor storefront management",
-      "Secure online payments",
-      "Real-time order tracking",
-      "Product search & recommendations",
+      "Mission coordination",
+      "Resource management",
+      "Volunteer onboarding",
+      "Global network mapping",
     ],
   },
   {
@@ -53,7 +53,7 @@ export const PROJECTS = [
     tags: ["Portfolio", "Web Design", "Next.js", "TailwindCSS"],
     links: {
       live: "https://www.ceciliaabua.com",
-      github: "https://github.com/Sliver14/cecilia-abua",
+      github: "https://github.com/Sliver14/cecilibua",
     },
     features: [
       "Responsive design",
@@ -70,7 +70,7 @@ export const PROJECTS = [
     tags: ["Portfolio", "Frontend", "React", "Animations"],
     links: {
       live: "https://www.estherodejobi.com",
-      github: "https://github.com/Sliver14/esther-odejobi",
+      github: "https://github.com/Sliver14/Esther-Odejobi",
     },
     features: [
       "Dynamic content",
