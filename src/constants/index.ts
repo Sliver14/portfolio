@@ -32,7 +32,7 @@ export const PROJECTS = [
     id: "medical-missions",
     title: "Network for Medical Missions",
     description: "A platform dedicated to coordinating and supporting medical missions globally.",
-    image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&q=80",
+    image: "/Network for Medical Missions.png",
     tags: ["Medical", "Next.js", "Firebase", "Global Outreach"],
     links: {
       live: "https://networkformedicalmissions.org",
@@ -49,7 +49,7 @@ export const PROJECTS = [
     id: "cecilia-abua",
     title: "Cecilia Abua Portfolio",
     description: "Personal portfolio and brand showcase for Cecilia Abua.",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80",
+    image: "/The Real Estate Brokerage Blueprint _ UDS.png",
     tags: ["Portfolio", "Web Design", "Next.js", "TailwindCSS"],
     links: {
       live: "https://www.ceciliaabua.com",
@@ -66,7 +66,7 @@ export const PROJECTS = [
     id: "esther-odejobi",
     title: "Esther Odejobi Portfolio",
     description: "Personal brand and portfolio website for Esther Odejobi.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80",
+    image: "/esther.png",
     tags: ["Portfolio", "Frontend", "React", "Animations"],
     links: {
       live: "https://www.estherodejobi.com",
