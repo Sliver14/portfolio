@@ -146,7 +146,7 @@ export const TESTIMONIALS = [
 export const CONTACT_INFO = {
   email: "silverchristopher12@gmail.com",
   socials: [
-    { label: "Twitter", href: "https://github.com/Sliver14" },
+    { label: "Twitter", href: "https://x.com/SylvaFx" },
     { label: "GitHub", href: "https://github.com/Sliver14" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/sylver-oyinaga-7409481a9" },
   ],
