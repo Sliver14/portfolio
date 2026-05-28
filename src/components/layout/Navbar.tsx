@@ -47,7 +47,7 @@ export const Navbar = () => {
             </li>
           ))}
           <li>
-            <Link href="#contact">
+            <Link href="/#contact">
               <Button size="sm" className="cursor-pointer rounded-full px-6 shadow-glow">
                 Let&apos;s Build
               </Button>
@@ -86,7 +86,7 @@ export const Navbar = () => {
                 </li>
               ))}
               <li>
-                <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/#contact" onClick={() => setMobileMenuOpen(false)}>
                   <Button className="w-full rounded-full shadow-glow">Let&apos;s Build</Button>
                 </Link>
               </li>
