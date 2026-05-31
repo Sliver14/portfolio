@@ -1,16 +1,19 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { PROJECTS } from "@/constants";
 import { Play } from "lucide-react";
 import Image from "next/image";
 
-interface FullScreenVideoElement extends HTMLVideoElement {
+interface FullScreenElement extends HTMLDivElement {
   webkitRequestFullscreen?: () => Promise<void>;
-  webkitEnterFullscreen?: () => Promise<void>;
   msRequestFullscreen?: () => Promise<void>;
+}
+
+interface FullScreenVideoElement extends HTMLVideoElement {
+  webkitEnterFullscreen?: () => Promise<void>;
 }
 
 interface FullScreenDocument extends Document {
@@ -20,35 +23,37 @@ interface FullScreenDocument extends Document {
 
 export const VideoShowcase = () => {
   const flagship = PROJECTS.find((p) => p.id === "gym-pilot-pro");
-  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<FullScreenVideoElement>(null);
+  const containerRef = useRef<FullScreenElement>(null);
 
   const handlePlay = async () => {
-    if (videoRef.current) {
+    if (videoRef.current && containerRef.current) {
       try {
         const video = videoRef.current;
+        const container = containerRef.current;
         
-        // Ensure video is "displayable" before requesting fullscreen
+        // Ensure container and video are "displayable" before requesting fullscreen
+        container.style.display = "flex";
         video.style.display = "block";
         video.style.opacity = "1";
 
-        if (video.requestFullscreen) {
-          await video.requestFullscreen();
-        } else if (video.webkitRequestFullscreen) {
-          await video.webkitRequestFullscreen();
+        if (container.requestFullscreen) {
+          await container.requestFullscreen();
+        } else if (container.webkitRequestFullscreen) {
+          await container.webkitRequestFullscreen();
+        } else if (container.msRequestFullscreen) {
+          await container.msRequestFullscreen();
         } else if (video.webkitEnterFullscreen) {
+          // Fallback for iOS/Safari which might only support video fullscreen
           await video.webkitEnterFullscreen();
-        } else if (video.msRequestFullscreen) {
-          await video.msRequestFullscreen();
         }
         
         video.play();
-        setIsPlaying(true);
       } catch (err) {
         console.error("Error attempting to enable full-screen mode:", err);
         // Reset styles if it fails
-        if (videoRef.current) {
-          videoRef.current.style.display = "none";
+        if (containerRef.current) {
+          containerRef.current.style.display = "none";
         }
       }
     }
@@ -60,10 +65,11 @@ export const VideoShowcase = () => {
       const isCurrentlyFullscreen = !!(doc.fullscreenElement || doc.webkitFullscreenElement || doc.webkitIsFullScreen);
       
       if (!isCurrentlyFullscreen) {
-        setIsPlaying(false);
         if (videoRef.current) {
           videoRef.current.pause();
-          videoRef.current.style.display = "none"; // Re-hide when exiting
+        }
+        if (containerRef.current) {
+          containerRef.current.style.display = "none"; // Re-hide when exiting
         }
       }
     };
@@ -88,18 +94,24 @@ export const VideoShowcase = () => {
           className="object-cover opacity-40 scale-105 transition-transform duration-1000"
         />
         
-        {/* Hidden Video element for Fullscreen API */}
-        <video
-          ref={videoRef}
-          style={{ display: "none" }} // Initially hidden
-          className="absolute inset-0 w-full h-full object-contain md:object-cover bg-black"
-          controlsList="nodownload"
-          onContextMenu={(e) => e.preventDefault()}
-          disablePictureInPicture
-          playsInline
+        {/* Fullscreen Container for Video */}
+        <div 
+          ref={containerRef}
+          style={{ display: "none" }}
+          className="fixed inset-0 z-[100] bg-black items-center justify-center w-full h-full"
         >
-          <source src={flagship?.video} type="video/mp4" />
-        </video>
+          <video
+            ref={videoRef}
+            className="w-full h-full object-contain bg-black"
+            controlsList="nodownload"
+            onContextMenu={(e) => e.preventDefault()}
+            disablePictureInPicture
+            playsInline
+            controls
+          >
+            <source src={flagship?.video} type="video/mp4" />
+          </video>
+        </div>
         
         {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background z-10" />

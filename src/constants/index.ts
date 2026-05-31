@@ -79,6 +79,25 @@ export const PROJECTS = [
       "Contact integration",
     ],
   },
+  {
+    id: "reno-fintech",
+    title: "Reno",
+    description: "A modern FinTech App bridging traditional banking with the crypto economy.",
+    longDescription: "Reno is a comprehensive financial technology mobile application built with React Native and Expo. Designed for the modern user, it offers a unified platform for managing both traditional fiat currency (Naira) and digital assets (Cryptocurrency), featuring multi-asset wallets, instant swapping, and an investment portal.",
+    image: "/reno-flyer.png",
+    tags: ["FinTech", "React Native", "Expo", "Crypto", "TypeScript"],
+    links: {
+      live: "https://drive.google.com/file/d/1byRoGDm47X0Srv4QjrFLX_34sRhGobHK/view?usp=drive_link",
+      github: "https://github.com/Sliver14/Reno",
+    },
+    features: [
+      "Multi-Asset Wallets (NGN, BTC, ETH)",
+      "Instant Asset Swapping",
+      "Investment Management Portal",
+      "Bill Payments & Financial Services",
+      "Premium Dark-Themed UI with Sora Typeface",
+    ],
+  },
 ];
 
 export const SKILLS = [
