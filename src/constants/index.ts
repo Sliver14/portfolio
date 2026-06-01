@@ -32,7 +32,7 @@ export const PROJECTS = [
     image: "/reno-flyer.png",
     tags: ["FinTech", "React Native", "Expo", "Crypto", "TypeScript"],
     links: {
-      live: "https://drive.google.com/file/d/1byRoGDm47X0Srv4QjrFLX_34sRhGobHK/view?usp=drive_link",
+      live: "https://drive.google.com/file/d/1byRoGDm47X0Srv4QjrFLX_34sRhGobHK/view?usp=sharing",
       github: "https://github.com/Sliver14/Reno",
     },
     features: [
