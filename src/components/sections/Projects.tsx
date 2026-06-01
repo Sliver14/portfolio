@@ -8,14 +8,15 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Projects = () => {
   const flagship = PROJECTS.find((p) => p.id === "gym-pilot-pro");
   const featuredOthers = PROJECTS.filter((p) => p.id !== "gym-pilot-pro").slice(0, 2);
 
   return (
-    <Section id="projects" className="space-y-24 py-12">
-      <div className="text-center max-w-3xl mx-auto mb-12">
+    <Section id="projects" className="space-y-16 md:space-y-24 py-12">
+      <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
         <Badge variant="outline" className="mb-4">PROJECTS</Badge>
         <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
           Selected <span className="text-gradient">Architectures</span>
@@ -27,12 +28,12 @@ export const Projects = () => {
 
       {/* Flagship Project - Premium Split Layout */}
       {flagship && (
-        <div className="group relative max-w-6xl mx-auto">
+        <div className="group relative max-w-6xl mx-auto px-4 md:px-0">
           <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-[2rem] blur opacity-15 group-hover:opacity-30 transition duration-1000" />
-          <Card className="relative overflow-hidden bg-background/50 border-white/10 rounded-[2rem] flex flex-col lg:flex-row items-stretch min-h-fit lg:min-h-[500px]">
+          <Card className="relative overflow-hidden bg-background/50 border-white/10 rounded-[2rem] flex flex-col lg:flex-row items-stretch">
             
             {/* Content Side - Left */}
-            <div className="w-full lg:w-[50%] p-8 md:p-12 space-y-6 flex flex-col justify-center">
+            <div className="w-full lg:w-[50%] p-6 md:p-12 space-y-6 flex flex-col justify-center">
               <div className="space-y-4">
                 <Badge className="bg-primary/20 text-primary border-primary/30 py-1 px-3 text-[10px] font-bold uppercase tracking-widest">
                   Flagship SaaS
@@ -43,7 +44,7 @@ export const Projects = () => {
                 </p>
               </div>
               
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 {flagship.features.slice(0, 4).map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
@@ -55,7 +56,7 @@ export const Projects = () => {
               <div className="flex flex-wrap gap-4 pt-4">
                 <Button
                   onClick={() => flagship.links.live && window.open(flagship.links.live, '_blank')}
-                  className="hover:cursor-pointer rounded-full px-8 shadow-glow h-12"
+                  className="hover:cursor-pointer rounded-full px-6 md:px-8 shadow-glow h-11 md:h-12 text-sm md:text-base"
                 >
                   Live Preview <ArrowUpRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -63,7 +64,7 @@ export const Projects = () => {
                 <Button
                   variant="outline"
                   onClick={() => flagship.links.github && window.open(flagship.links.github, '_blank')}
-                  className="hover:cursor-pointer rounded-full px-8 border-white/10 h-12"
+                  className="hover:cursor-pointer rounded-full px-6 md:px-8 border-white/10 h-11 md:h-12 text-sm md:text-base"
                 >
                   <Code2 className="mr-2 w-4 h-4" /> Source
                 </Button>
@@ -71,12 +72,13 @@ export const Projects = () => {
             </div>
 
             {/* Media Side - Right (Contained & Rounded) */}
-            <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-full p-4 md:p-8 lg:p-10 lg:pl-0 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500">
-              <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden border border-white/10 bg-muted shadow-2xl group-hover:border-primary/40 transition-colors">
-                <img
+            <div className="w-full lg:w-[50%] relative p-4 md:p-8 lg:p-10 lg:pl-0 flex items-center justify-center">
+              <div className="relative w-full aspect-video lg:aspect-square xl:aspect-video rounded-[1.5rem] overflow-hidden border border-white/10 bg-muted shadow-2xl group-hover:border-primary/40 transition-all duration-500 group-hover:scale-[1.02]">
+                <Image
                   src={flagship.image}
                   alt={flagship.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105"
+                  fill
+                  className="object-cover object-center transition-transform duration-1000 group-hover:scale-105"
                 />
                 {/* Immersive Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-background/20 to-transparent pointer-events-none" />
