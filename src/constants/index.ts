@@ -128,7 +128,7 @@ export const EXPERIENCE = [
   {
     role: "SaaS Founder",
     company: "GymPilotPro",
-    period: "2023 - Present",
+    period: "2025 - Present",
     description: "Helping 50+ business owners automate operations and scale their brands through an AI-driven ecosystem.",
     achievements: [
       "Empowered gym owners with AI-personalized fitness plans",
