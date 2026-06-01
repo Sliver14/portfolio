@@ -8,11 +8,47 @@ export const NAV_LINKS = [
 
 export const PROJECTS = [
   {
+    id: "esther-odejobi",
+    title: "Esther Odejobi Portfolio",
+    description: "Personal brand and portfolio website for Esther Odejobi.",
+    image: "/esther.png",
+    tags: ["Portfolio", "Frontend", "React", "Animations"],
+    links: {
+      live: "https://www.estherodejobi.com",
+      github: "https://github.com/Sliver14/Esther-Odejobi",
+    },
+    features: [
+      "Dynamic content",
+      "Smooth animations",
+      "Mobile optimized",
+      "Contact integration",
+    ],
+  },
+  {
+    id: "reno-fintech",
+    title: "Reno",
+    description: "A modern FinTech App bridging traditional banking with the crypto economy.",
+    longDescription: "Reno is a comprehensive financial technology mobile application built with React Native and Expo. Designed for the modern user, it offers a unified platform for managing both traditional fiat currency (Naira) and digital assets (Cryptocurrency), featuring multi-asset wallets, instant swapping, and an investment portal.",
+    image: "/reno-flyer.png",
+    tags: ["FinTech", "React Native", "Expo", "Crypto", "TypeScript"],
+    links: {
+      live: "https://drive.google.com/file/d/1byRoGDm47X0Srv4QjrFLX_34sRhGobHK/view?usp=drive_link",
+      github: "https://github.com/Sliver14/Reno",
+    },
+    features: [
+      "Multi-Asset Wallets (NGN, BTC, ETH)",
+      "Instant Asset Swapping",
+      "Investment Management Portal",
+      "Bill Payments & Financial Services",
+      "Premium Dark-Themed UI with Sora Typeface",
+    ],
+  },
+  {
     id: "gym-pilot-pro",
     title: "GymPilotPro",
     description: "AI-powered gym management SaaS platform revolutionizing how fitness centers operate.",
     longDescription: "A comprehensive AI-driven ecosystem for gym owners. Featuring automated membership management, real-time analytics, AI-powered workout recommendations, and seamless trainer-client communication.",
-    image: "/gympilotPro.jpeg",
+    image: "/gympilotPro.png",
     video: "/GymPilotPro Clip1 Voiceover 2.mp4",
     tags: ["SaaS", "AI", "Full Stack", "Next.js", "PostgreSQL"],
     links: {
@@ -62,42 +98,7 @@ export const PROJECTS = [
       "Interactive elements",
     ],
   },
-  {
-    id: "esther-odejobi",
-    title: "Esther Odejobi Portfolio",
-    description: "Personal brand and portfolio website for Esther Odejobi.",
-    image: "/esther.png",
-    tags: ["Portfolio", "Frontend", "React", "Animations"],
-    links: {
-      live: "https://www.estherodejobi.com",
-      github: "https://github.com/Sliver14/Esther-Odejobi",
-    },
-    features: [
-      "Dynamic content",
-      "Smooth animations",
-      "Mobile optimized",
-      "Contact integration",
-    ],
-  },
-  {
-    id: "reno-fintech",
-    title: "Reno",
-    description: "A modern FinTech App bridging traditional banking with the crypto economy.",
-    longDescription: "Reno is a comprehensive financial technology mobile application built with React Native and Expo. Designed for the modern user, it offers a unified platform for managing both traditional fiat currency (Naira) and digital assets (Cryptocurrency), featuring multi-asset wallets, instant swapping, and an investment portal.",
-    image: "/reno-flyer.png",
-    tags: ["FinTech", "React Native", "Expo", "Crypto", "TypeScript"],
-    links: {
-      live: "https://drive.google.com/file/d/1byRoGDm47X0Srv4QjrFLX_34sRhGobHK/view?usp=drive_link",
-      github: "https://github.com/Sliver14/Reno",
-    },
-    features: [
-      "Multi-Asset Wallets (NGN, BTC, ETH)",
-      "Instant Asset Swapping",
-      "Investment Management Portal",
-      "Bill Payments & Financial Services",
-      "Premium Dark-Themed UI with Sora Typeface",
-    ],
-  },
+  
 ];
 
 export const SKILLS = [
