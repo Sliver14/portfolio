@@ -209,8 +209,8 @@ export const Hero = () => {
           style={{ transform: !isMobile ? "translateZ(80px)" : "none" }}
           className="text-5xl md:text-8xl font-bold tracking-tighter mb-6 leading-[1.1] relative"
         >
-          Helping Brands <span className="text-gradient">Scale</span> & <br />{" "}
-          <span className="italic font-light">Succeed</span> In This Digital Age
+          Helping Businesses Grow with <br />
+          <span className="text-gradient">Custom Software & AI Solutions</span>
           
           <motion.div 
             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-200%]"
@@ -226,8 +226,7 @@ export const Hero = () => {
           style={{ transform: !isMobile ? "translateZ(40px)" : "none" }}
           className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto backdrop-blur-[2px]"
         >
-          We help business owners and forward-thinking brands transform complex ideas into 
-          high-performance, AI-driven products that drive real growth and efficiency.
+          We partner with startups, SMEs, and enterprises to create scalable digital solutions that streamline operations, improve customer experiences, and drive sustainable business growth.
         </motion.p>
 
         <motion.div
