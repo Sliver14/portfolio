@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing | Sylver Dev",
-  description: "Transparent pricing for website and mobile app development services.",
+  title: "Pricing | InsightNovaTech",
+  description: "Transparent pricing for custom software, website, and mobile app development services by InsightNovaTech.",
 };
 
 export default function PricingLayout({

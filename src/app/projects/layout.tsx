@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "All Projects | Sylver Portfolio",
-  description: "A comprehensive showcase of all products and applications built by Sylver.",
+  title: "Client Catalog | InsightNovaTech",
+  description: "A comprehensive showcase of client work, SaaS platforms, and software architectures built by InsightNovaTech.",
 };
 
 export default function ProjectsLayout({

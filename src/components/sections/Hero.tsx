@@ -226,7 +226,7 @@ export const Hero = () => {
           style={{ transform: !isMobile ? "translateZ(40px)" : "none" }}
           className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto backdrop-blur-[2px]"
         >
-          I help business owners and forward-thinking brands transform complex ideas into 
+          We help business owners and forward-thinking brands transform complex ideas into 
           high-performance, AI-driven products that drive real growth and efficiency.
         </motion.p>
 
@@ -240,7 +240,7 @@ export const Hero = () => {
           <Link href="/projects">
             <Button size="lg" className="rounded-full px-8 h-12 text-md shadow-glow group relative overflow-hidden">
               <span className="cursor-pointer relative z-10 flex items-center">
-                See How I Help
+                See How We Help
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
               <motion.div 

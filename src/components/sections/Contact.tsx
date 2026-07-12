@@ -34,34 +34,34 @@ export const Contact = () => {
           <p className="text-muted-foreground text-lg mb-12 max-w-md">
             Whether you have a fully-fledged SaaS idea or just a spark of inspiration, let&apos;s talk about how we can scale it.
           </p>
-          
+
           <div className="space-y-6">
-            <a 
-              href="mailto:silverchristopher12@gmail.com" 
+            <a
+              href="mailto:admin@insightnovatech.com"
               className="flex items-center gap-4 group cursor-pointer"
             >
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Mail className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-widest">Email</p>
-                    <p className="font-medium">silverchristopher12@gmail.com</p>
-                </div>
+              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <Mail className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground uppercase tracking-widest">Email</p>
+                <p className="font-medium">admin@insightnovatech.com</p>
+              </div>
             </a>
-            
-            <a 
-              href="https://wa.me/2348135971304" 
-              target="_blank" 
+
+            <a
+              href="https://wa.me/2348135971304"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 group cursor-pointer"
             >
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <MessageSquare className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-widest">WhatsApp</p>
-                    <p className="font-medium">+234 813 597 1304</p>
-                </div>
+              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <MessageSquare className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground uppercase tracking-widest">WhatsApp</p>
+                <p className="font-medium">+234 813 597 1304</p>
+              </div>
             </a>
           </div>
         </div>
@@ -72,7 +72,7 @@ export const Contact = () => {
           className="p-8 md:p-12 rounded-[2rem] border border-white/5 bg-white/[0.02] shadow-2xl relative overflow-hidden"
         >
           {isSuccess ? (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="h-full flex flex-col items-center justify-center text-center space-y-4 py-12"
@@ -82,10 +82,10 @@ export const Contact = () => {
               </div>
               <h3 className="text-2xl font-bold">Message Sent!</h3>
               <p className="text-muted-foreground">
-                Thank you for reaching out. I&apos;ll get back to you as soon as possible.
+                Thank you for reaching out. We&apos;ll get back to you as soon as possible.
               </p>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 onClick={() => setIsSuccess(false)}
                 className="mt-4"
               >
@@ -97,11 +97,11 @@ export const Contact = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-medium uppercase tracking-widest ml-1">Name</label>
-                  <Input 
+                  <Input
                     name="name"
                     required
-                    placeholder="John Doe" 
-                    className="bg-background/50 border-white/10 rounded-xl h-12 focus:border-primary/50" 
+                    placeholder="John Doe"
+                    className="bg-background/50 border-white/10 rounded-xl h-12 focus:border-primary/50"
                   />
                   {typeof state?.error === 'object' && state.error?.name && (
                     <p className="text-xs text-destructive flex items-center gap-1">
@@ -111,12 +111,12 @@ export const Contact = () => {
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-medium uppercase tracking-widest ml-1">Email</label>
-                  <Input 
+                  <Input
                     name="email"
-                    type="email" 
+                    type="email"
                     required
-                    placeholder="john@example.com" 
-                    className="bg-background/50 border-white/10 rounded-xl h-12 focus:border-primary/50" 
+                    placeholder="john@example.com"
+                    className="bg-background/50 border-white/10 rounded-xl h-12 focus:border-primary/50"
                   />
                   {typeof state?.error === 'object' && state.error?.email && (
                     <p className="text-xs text-destructive flex items-center gap-1">
@@ -126,20 +126,20 @@ export const Contact = () => {
                 </div>
               </div>
               <div className="space-y-2">
-                  <label className="text-xs font-medium uppercase tracking-widest ml-1">Message</label>
-                  <Textarea 
-                    name="message"
-                    required
-                    placeholder="Tell me about your project..." 
-                    className="bg-background/50 border-white/10 rounded-xl min-h-[150px] focus:border-primary/50" 
-                  />
-                  {typeof state?.error === 'object' && state.error?.message && (
-                    <p className="text-xs text-destructive flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" /> {state.error.message[0]}
-                    </p>
-                  )}
+                <label className="text-xs font-medium uppercase tracking-widest ml-1">Message</label>
+                <Textarea
+                  name="message"
+                  required
+                  placeholder="Tell us about your project..."
+                  className="bg-background/50 border-white/10 rounded-xl min-h-[150px] focus:border-primary/50"
+                />
+                {typeof state?.error === 'object' && state.error?.message && (
+                  <p className="text-xs text-destructive flex items-center gap-1">
+                    <AlertCircle className="w-3 h-3" /> {state.error.message[0]}
+                  </p>
+                )}
               </div>
-              
+
               {typeof state?.error === 'string' && (
                 <div className="p-4 rounded-xl bg-destructive/10 border border-destructive/20 text-destructive text-sm flex items-center gap-2">
                   <AlertCircle className="w-4 h-4" />
@@ -147,13 +147,13 @@ export const Contact = () => {
                 </div>
               )}
 
-              <Button 
+              <Button
                 type="submit"
                 disabled={isPending}
                 className="w-full h-14 rounded-xl text-lg font-bold shadow-glow group disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                  {isPending ? "Sending..." : "Send Message"}
-                  {!isPending && <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
+                {isPending ? "Sending..." : "Send Message"}
+                {!isPending && <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
               </Button>
             </form>
           )}

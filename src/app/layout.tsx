@@ -16,12 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sylver | SaaS Founder & Product Engineer",
-  description: "Portfolio of a world-class SaaS founder and full-stack product engineer specializing in AI-driven ecosystems.",
-  keywords: ["Next.js", "React", "SaaS", "Founder", "Product Engineer", "AI", "Portfolio"],
-  icons: {
-    icon: "/favicon.svg",
-  },
+  title: "InsightNovaTech | Software Development Agency",
+  description: "InsightNovaTech is a software development agency specializing in scaling brands and building high-performance AI-driven ecosystems and SaaS products.",
+  keywords: ["Next.js", "React", "SaaS", "InsightNovaTech", "Software Development Agency", "AI", "Portfolio"],
 };
 
 export default function RootLayout({

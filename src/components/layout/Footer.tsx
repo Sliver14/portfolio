@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="flex flex-col items-center md:items-start gap-2">
           <Link href="/" className="text-xl font-bold tracking-tighter text-gradient">
-            SYLVER<span className="text-primary">.</span>
+            InsightNovaTech<span className="text-primary">.</span>
           </Link>
           <p className="text-xs text-muted-foreground uppercase tracking-widest">
             Building the future of SaaS
@@ -27,7 +27,7 @@ export const Footer = () => {
         </div>
 
         <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Sylver. All rights reserved.
+          © {new Date().getFullYear()} InsightNovaTech. All rights reserved.
         </p>
       </div>
     </footer>

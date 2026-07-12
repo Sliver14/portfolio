@@ -18,7 +18,7 @@ export const Experience = () => {
             <span className="text-gradient">Precision</span>
           </h2>
           <p className="text-muted-foreground mb-8">
-            My career is defined by building products from the ground up. I thrive in the intersection of business logic and technical execution.
+            Our work is defined by building products from the ground up. We thrive in the intersection of business logic and technical execution.
           </p>
           
           <div className="space-y-6">

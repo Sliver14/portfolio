@@ -25,7 +25,7 @@ export default function ProjectsPage() {
               Full <span className="text-gradient">Catalog</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl">
-              Exploring the complete archive of SaaS products, marketplaces, and personal brand experiences.
+              Exploring our complete catalog of client brand sites, SaaS platforms, marketplaces, and custom software architectures.
             </p>
           </div>
           <Badge variant="outline" className="h-fit py-2 px-4 border-white/10">

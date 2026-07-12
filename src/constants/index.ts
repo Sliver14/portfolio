@@ -98,7 +98,7 @@ export const PROJECTS = [
       "Interactive elements",
     ],
   },
-  
+
 ];
 
 export const SKILLS = [
@@ -164,7 +164,7 @@ export const TESTIMONIALS = [
 ];
 
 export const CONTACT_INFO = {
-  email: "silverchristopher12@gmail.com",
+  email: "admin@insightnovatech.com",
   socials: [
     { label: "Twitter", href: "https://x.com/SylvaFx" },
     { label: "GitHub", href: "https://github.com/Sliver14" },

@@ -7,106 +7,106 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 const websitePlans = [
   {
     title: "Starter Websites",
-    price: "₦80,000",
-    description: "Perfect for landing pages, portfolios, event registrations and simple business websites.",
+    priceNGN: 80000,
+    description: "Perfect for landing pages, brand showcases, event registrations and simple business websites.",
     features: [
       "Up to 3 pages",
       "Responsive design",
-      "Contact forms",
-      "WhatsApp integration",
-      "Basic SEO",
-      "Deployment",
+      "Contact & lead forms",
+      "WhatsApp & social integration",
+      "Basic SEO configurations",
+      "Production deployment",
     ],
-    icon: <Zap className="w-5 h-5 text-green-400" />,
-    color: "green",
+    icon: <Zap className="w-5 h-5 text-cyan-400" />,
+    popular: false,
   },
   {
     title: "Business Websites",
-    price: "₦200,000",
-    description: "Professional websites for companies, brands and growing businesses.",
+    priceNGN: 200000,
+    description: "Professional multi-page websites designed for companies, brands and growing businesses.",
     features: [
-      "5–8 pages",
-      "Modern UI/UX",
-      "SEO ready",
-      "Performance optimization",
-      "Analytics setup",
-      "Lead generation forms",
+      "5–8 custom pages",
+      "Premium UI/UX layout",
+      "SEO & speed optimization",
+      "Analytics & tracking setup",
+      "Lead generation & CRM integrations",
+      "Interactive animations",
     ],
     icon: <Globe className="w-5 h-5 text-blue-400" />,
-    color: "blue",
     popular: true,
   },
   {
     title: "Custom Business Systems",
-    price: "₦500,000",
-    description: "Powerful web applications built around your business operations.",
+    priceNGN: 500000,
+    description: "Powerful bespoke web platforms built to automate and power your business operations.",
     features: [
-      "Authentication",
-      "Admin dashboard",
-      "Database integration",
-      "APIs",
-      "Role-based access",
-      "Automation workflows",
+      "Secure user authentication",
+      "Interactive admin dashboard",
+      "Relational database integration",
+      "Third-party API connections",
+      "Role-based access controls",
+      "Automation & cron workflows",
     ],
     icon: <Settings className="w-5 h-5 text-purple-400" />,
-    color: "purple",
+    popular: false,
   },
   {
-    title: "Enterprise Platforms",
-    price: "₦800,000",
-    description: "Tailored platforms designed for complex industries and organisations.",
+    title: "Enterprise SaaS Platforms",
+    priceNGN: 800000,
+    description: "Tailored complex software platforms built for heavy scaling and advanced logic.",
     features: [
-      "Custom dashboards",
-      "Reporting & analytics",
-      "Workflow automation",
-      "CRM integrations",
-      "Payment systems",
-      "Scalable architecture",
+      "Bespoke modular dashboards",
+      "Real-time analytics & reporting",
+      "Workflow & email automation",
+      "Advanced CRM & ERP integrations",
+      "Multi-gateway payment systems",
+      "High-availability architecture",
     ],
-    details: "Examples: Property listing platforms, LMS, CRMs, booking systems, inventory systems, healthcare portals and more.",
+    details: "Examples: Real estate directories, LMS platforms, bespoke booking/reservations, inventory control engines, healthcare portals, etc.",
     icon: <Shield className="w-5 h-5 text-red-400" />,
-    color: "red",
+    popular: false,
   },
 ];
 
 const mobilePlans = [
   {
-    title: "MVP / Simple Apps",
-    price: "₦300,000",
+    title: "MVP / Prototype Apps",
+    priceNGN: 300000,
     features: [
-      "3–5 screens",
-      "User authentication",
-      "API integration",
-      "Push notifications",
-      "Cross-platform support",
+      "3–5 interactive screens",
+      "Standard user onboarding",
+      "RESTful API integration",
+      "Instant push notifications",
+      "Cross-platform support (iOS & Android)",
     ],
     icon: <Smartphone className="w-5 h-5 text-sky-400" />,
   },
   {
-    title: "Standard Apps",
-    price: "₦800,000",
+    title: "Standard Mobile SaaS",
+    priceNGN: 800000,
     features: [
-      "User dashboards",
-      "Payments",
-      "Admin panel",
-      "Notifications",
-      "Analytics",
+      "Complete client dashboards",
+      "Mobile payment processing",
+      "Bespoke admin console",
+      "Automated notification triggers",
+      "In-app search & activity feeds",
     ],
     icon: <Rocket className="w-5 h-5 text-indigo-400" />,
   },
   {
-    title: "Enterprise Apps",
-    price: "₦1,500,000",
+    title: "Enterprise Mobile Apps",
+    priceNGN: 1500000,
     features: [
-      "Offline support",
-      "Complex APIs",
-      "Advanced security",
-      "Scalable backend",
-      "Multi-role systems",
+      "Offline sync capabilities",
+      "Complex REST/GraphQL APIs",
+      "Biometric security features",
+      "Enterprise relational backend",
+      "Multi-tenant application models",
     ],
     icon: <Shield className="w-5 h-5 text-amber-400" />,
   },
@@ -114,51 +114,85 @@ const mobilePlans = [
 
 const maintenancePlans = [
   {
-    title: "Basic",
-    price: "₦20,000/mo",
-    features: ["Bug fixes", "Security updates", "Minor content updates"],
+    title: "Basic Maintenance",
+    priceNGN: 20000,
+    period: "/mo",
+    features: ["Bimonthly bug fixes", "Core dependency security patches", "Minor content & text updates"],
   },
   {
-    title: "Standard",
-    price: "₦50,000/mo",
-    features: ["Everything in Basic", "Performance monitoring", "Regular updates", "Small improvements"],
+    title: "Standard Maintenance",
+    priceNGN: 50000,
+    period: "/mo",
+    features: ["Everything in Basic", "Real-time performance metrics", "Biweekly updates & minor design upgrades"],
   },
   {
-    title: "Premium",
-    price: "₦100,000+/mo",
-    features: ["Priority support", "Feature enhancements", "Technical consulting", "Continuous optimization"],
+    title: "Premium Engineering Support",
+    priceNGN: 100000,
+    period: "/mo",
+    features: ["Priority ticket handling", "Continuous feature development", "SaaS consulting hours", "Daily performance audits"],
   },
 ];
 
 const addOns = [
-  { name: "Extra Website Page", price: "₦15,000" },
-  { name: "Backend/API Development", price: "₦100,000" },
-  { name: "Payment Gateway Integration", price: "₦75,000" },
-  { name: "Authentication System", price: "₦75,000" },
-  { name: "Admin Dashboard", price: "₦150,000" },
-  { name: "Blog/CMS", price: "₦75,000" },
-  { name: "Email Automation", price: "₦50,000" },
-  { name: "WhatsApp Integration", price: "₦30,000" },
-  { name: "Hosting & Deployment", price: "₦30,000" },
-  { name: "Domain & Email Setup", price: "₦20,000" },
-  { name: "SEO Optimization", price: "₦50,000" },
-  { name: "Performance Optimization", price: "₦50,000" },
-  { name: "Push Notifications", price: "₦50,000" },
-  { name: "Play Store / App Store Publishing", price: "₦75,000" },
+  { name: "Extra Website Page", priceNGN: 15000 },
+  { name: "Backend API Layer Expansion", priceNGN: 100000 },
+  { name: "Payment Gateway Integration", priceNGN: 75000 },
+  { name: "Multi-factor Authentication", priceNGN: 75000 },
+  { name: "Admin Dashboard Control Panel", priceNGN: 150000 },
+  { name: "Headless CMS Integration", priceNGN: 75000 },
+  { name: "Transactional Email Automation", priceNGN: 50000 },
+  { name: "WhatsApp Business API Setup", priceNGN: 30000 },
+  { name: "Cloud Hosting & CI/CD Setup", priceNGN: 30000 },
+  { name: "Custom Domain & Workspace Email", priceNGN: 20000 },
+  { name: "Full-page SEO Audit & Setup", priceNGN: 50000 },
+  { name: "Speed & Performance Auditing", priceNGN: 50000 },
+  { name: "Push Notification Suite Setup", priceNGN: 50000 },
+  { name: "App Store & Google Play Console Submission", priceNGN: 75000 },
 ];
 
 export default function PricingPage() {
+  const [currency, setCurrency] = useState<"NGN" | "USD">("USD");
+
+  useEffect(() => {
+    try {
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const isWestAfrican = 
+        timeZone.includes("Lagos") || 
+        timeZone.includes("Africa/Lagos") || 
+        timeZone.includes("Africa/Accra") || 
+        timeZone.includes("Africa/Nairobi") ||
+        timeZone.includes("Africa/Johannesburg");
+      
+      if (isWestAfrican) {
+        setCurrency("NGN");
+      } else {
+        setCurrency("USD");
+      }
+    } catch (e) {
+      setCurrency("USD");
+    }
+  }, []);
+
+  const formatPrice = (ngnVal: number, period: string = "") => {
+    if (currency === "NGN") {
+      return `₦${ngnVal.toLocaleString()}${period}`;
+    } else {
+      const usdVal = Math.round(ngnVal / 1500);
+      return `$${usdVal.toLocaleString()}${period}`;
+    }
+  };
+
   return (
     <div className="relative min-h-screen bg-background overflow-hidden">
       {/* Background Decor */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px]" />
       </div>
 
       <Section className="relative z-10 pt-32">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -186,6 +220,32 @@ export default function PricingPage() {
           </motion.p>
         </div>
 
+        {/* Currency Switcher Toggle */}
+        <div className="flex justify-center mb-16">
+          <div className="flex items-center bg-white/5 border border-white/10 rounded-full p-1 backdrop-blur-md">
+            <button
+              onClick={() => setCurrency("NGN")}
+              className={`px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+                currency === "NGN"
+                  ? "bg-primary text-black shadow-glow"
+                  : "text-muted-foreground hover:text-white"
+              }`}
+            >
+              NGN (₦)
+            </button>
+            <button
+              onClick={() => setCurrency("USD")}
+              className={`px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+                currency === "USD"
+                  ? "bg-primary text-black shadow-glow"
+                  : "text-muted-foreground hover:text-white"
+              }`}
+            >
+              USD ($)
+            </button>
+          </div>
+        </div>
+
         {/* Website Plans */}
         <div className="space-y-12 mb-24">
           <div className="flex items-center gap-4 mb-8">
@@ -203,10 +263,10 @@ export default function PricingPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <Card className={`h-full bg-card/50 border-white/10 hover:border-primary/40 transition-all duration-300 relative group overflow-hidden ${plan.popular ? 'neon-border' : ''}`}>
+                <Card className={`h-full bg-card/50 border-white/10 hover:border-primary/40 transition-all duration-300 relative group overflow-hidden ${plan.popular ? 'border-primary/50 shadow-[0_0_15px_rgba(var(--primary),0.3)]' : ''}`}>
                    {plan.popular && (
                      <div className="absolute top-0 right-0">
-                       <div className="bg-primary text-primary-foreground text-[10px] font-bold px-3 py-1 rounded-bl-lg flex items-center gap-1">
+                       <div className="bg-primary text-black text-[10px] font-bold px-3 py-1 rounded-bl-lg flex items-center gap-1">
                          <Sparkles className="w-3 h-3" /> POPULAR
                        </div>
                      </div>
@@ -214,7 +274,9 @@ export default function PricingPage() {
                   <CardHeader>
                     <div className="mb-4">{plan.icon}</div>
                     <CardTitle className="text-xl">{plan.title}</CardTitle>
-                    <div className="text-2xl font-bold text-primary mt-2">{plan.price}</div>
+                    <div className="text-2xl font-bold text-primary mt-2">
+                      {formatPrice(plan.priceNGN)}
+                    </div>
                     <CardDescription className="mt-2 text-xs h-12 line-clamp-3">
                       {plan.description}
                     </CardDescription>
@@ -261,7 +323,9 @@ export default function PricingPage() {
                   <CardHeader>
                     <div className="mb-4">{plan.icon}</div>
                     <CardTitle className="text-xl">{plan.title}</CardTitle>
-                    <div className="text-2xl font-bold text-primary mt-2">Starting from {plan.price}</div>
+                    <div className="text-2xl font-bold text-primary mt-2">
+                      Starting from {formatPrice(plan.priceNGN)}
+                    </div>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
@@ -296,7 +360,9 @@ export default function PricingPage() {
                   {addOns.map((service) => (
                     <tr key={service.name} className="hover:bg-white/5 transition-colors">
                       <td className="p-4 text-sm text-muted-foreground">{service.name}</td>
-                      <td className="p-4 text-sm font-medium text-primary">{service.price}</td>
+                      <td className="p-4 text-sm font-medium text-primary">
+                        {formatPrice(service.priceNGN)}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -320,7 +386,9 @@ export default function PricingPage() {
                     <CardHeader className="pb-2">
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-lg">{plan.title}</CardTitle>
-                        <span className="text-primary font-bold">{plan.price}</span>
+                        <span className="text-primary font-bold">
+                          {formatPrice(plan.priceNGN, plan.period)}
+                        </span>
                       </div>
                     </CardHeader>
                     <CardContent>
@@ -374,14 +442,14 @@ export default function PricingPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-primary to-blue-600 p-8 md:p-16 text-center"
+          className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-primary to-accent-foreground p-8 md:p-16 text-center"
         >
           <div className="absolute inset-0 bg-noise opacity-20" />
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
             <h2 className="text-3xl md:text-5xl font-bold text-white">Need Something Custom?</h2>
             <p className="text-white/80 text-lg">
               Every project is different. Whether you&apos;re building a startup, internal business tool, 
-              marketplace, AI product, SaaS platform, or mobile app, I&apos;ll provide a solution tailored to your goals.
+              marketplace, AI product, SaaS platform, or mobile app, we&apos;ll provide a solution tailored to your goals.
             </p>
             <div className="pt-4">
               <Link href="/#contact">

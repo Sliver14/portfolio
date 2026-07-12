@@ -19,7 +19,7 @@ export const About = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="order-2 lg:order-1">
           <Badge variant="outline" className="mb-4 border-primary/20 text-primary">
-            HOW I HELP
+            HOW WE HELP
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             Empowering business owners <br />
@@ -27,7 +27,7 @@ export const About = () => {
           </h2>
           <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
             <p>
-              I focus on the intersection of business goals and technical excellence. My goal isn&apos;t 
+              We focus on the intersection of business goals and technical excellence. Our goal isn&apos;t 
               just to write code, but to help you build a sustainable, scalable engine for your 
               brand&apos;s success.
             </p>
@@ -62,6 +62,18 @@ export const About = () => {
             <div className="absolute inset-0 bg-primary/5 mix-blend-overlay pointer-events-none" />
           </div>
           
+          {/* Floating Founder Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="absolute -top-6 -right-6 glass px-5 py-3 rounded-2xl shadow-xl z-20 border border-primary/20"
+          >
+            <p className="text-sm font-bold text-white">Sylver</p>
+            <p className="text-[10px] text-primary uppercase tracking-widest font-semibold">
+              Founder & Lead Director
+            </p>
+          </motion.div>
+
           {/* Floating Metric Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}

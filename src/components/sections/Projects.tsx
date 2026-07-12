@@ -22,7 +22,7 @@ export const Projects = () => {
           Selected <span className="text-gradient">Architectures</span>
         </h2>
         <p className="text-muted-foreground text-lg">
-          A collection of high-performance SaaS platforms and modern web applications.
+          A showcase of client brand sites, high-performance SaaS platforms, and software architectures built by InsightNovaTech.
         </p>
       </div>
 

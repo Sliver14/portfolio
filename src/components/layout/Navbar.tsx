@@ -31,7 +31,7 @@ export const Navbar = () => {
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link href="/" className="text-xl font-bold tracking-tighter text-gradient">
-          SYLVER<span className="text-primary">.</span>
+          InsightNovaTech<span className="text-primary">.</span>
         </Link>
 
         {/* Desktop Nav */}
