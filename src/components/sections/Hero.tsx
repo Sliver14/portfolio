@@ -58,7 +58,7 @@ const TypewriterText = ({ text, delay = 150, start = true }: { text: string; del
     if (!start) return;
     let index = 0;
     setIsDone(false);
-    
+
     const startTimeout = setTimeout(() => {
       const interval = setInterval(() => {
         setDisplayText(text.substring(0, index + 1));
@@ -140,7 +140,7 @@ export const Hero = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
           </span>
-          AVAILABLE FOR NEW PROJECTS
+          NOW ACCEPTING NEW PROJECTS
         </motion.div>
 
         <motion.h1
