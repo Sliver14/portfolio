@@ -147,7 +147,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 leading-[1.1] relative"
+          className="text-[2.75rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 leading-[1.1] relative"
         >
           Helping Businesses <br />
           <span className="text-gradient italic font-light">
@@ -167,7 +167,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-sm sm:text-base md:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto backdrop-blur-[2px]"
+          className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto backdrop-blur-[2px]"
         >
           We partner with startups, SMEs, and enterprises to create digital solutions that streamline
           operations, automate repetitive work, enhance customer experiences, and support long-term business growth.
