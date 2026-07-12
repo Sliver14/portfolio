@@ -66,7 +66,7 @@ export const About = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            className="absolute -top-6 -right-6 glass px-5 py-3 rounded-2xl shadow-xl z-20 border border-primary/20"
+            className="absolute -top-14 sm:-top-6 -right-2 sm:-right-6 glass px-5 py-3 rounded-2xl shadow-xl z-20 border border-primary/20"
           >
             <p className="text-sm font-bold text-white">Sylver</p>
             <p className="text-[10px] text-primary uppercase tracking-widest font-semibold">
