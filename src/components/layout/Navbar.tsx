@@ -33,7 +33,7 @@ export const Navbar = () => {
       <nav className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 text-xl font-bold tracking-tighter text-gradient">
           <Image src="/insight-logo.png" width={24} height={24} alt="InsightNovaTech Logo" className="w-6 h-6 object-contain" />
-          <span>InsightNovaTech<span className="text-primary">.</span></span>
+          {/* <span>InsightNovaTech<span className="text-primary">.</span></span> */}
         </Link>
 
         {/* Desktop Nav */}
